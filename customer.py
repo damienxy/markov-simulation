@@ -17,7 +17,16 @@ class Customer:
             config.initial_section)
 
     def get_random_color(self):
-        return np.random.randint(0, 255, 3)
+        '''
+        Check out www.rgbcolors.xyz, a site I made while 
+        I was trying to find out which color combinations 
+        would look nice in the simulation
+        '''
+        red = np.random.randint(0, 90)
+        green = np.random.randint(70, 255)
+        blue = np.random.randint(0, 255)
+
+        return blue, green, red
 
     def get_colored_icon(self):
         return np.full((config.icon_size, config.icon_size, 3), self.get_random_color(), dtype='int8')
